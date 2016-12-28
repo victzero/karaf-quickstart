@@ -21,6 +21,7 @@ public class RestStarter {
         factory.setResourceClasses(DepartmentRestImpl.class);
         factory.setResourceProvider(new SingletonResourceProvider(new DepartmentRestImpl()));
         factory.setProvider(new JAXBElementProvider());
+//        factory.setProvider(new org.apache.cxf.jaxrs.provider.json.JSONProvider());
         Server server = factory.create();
         server.start();
     }
