@@ -23,11 +23,11 @@
 
     <bean id="departmentRestImpl" class="me.ezjs.exam.department.rest.impl.DepartmentRestImpl"/>
 
-    <bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
-        <property name="serializeAsArray" value="true"/>
-        <property name="dropRootElement" value="true"/>
-        <property name="supportUnwrapped" value="true" />
-    </bean>
+    <!--<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">-->
+        <!--<property name="serializeAsArray" value="true"/>-->
+        <!--<property name="dropRootElement" value="true"/>-->
+        <!--<property name="supportUnwrapped" value="true" />-->
+    <!--</bean>-->
 
     <jaxrs:server address="/department" id="departmentRest">
         <jaxrs:serviceBeans>
@@ -37,7 +37,8 @@
             <cxf:logging />
         </jaxrs:features>
         <jaxrs:providers>
-            <ref component-id="jsonProvider"/>
+            <!--<ref component-id="jsonProvider"/>-->
+            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
         </jaxrs:providers>
     </jaxrs:server>
 </blueprint>

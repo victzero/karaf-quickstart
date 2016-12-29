@@ -4,7 +4,7 @@ import me.ezjs.exam.department.rest.impl.DepartmentRestImpl;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxrs.JAXRSServerFactoryBean;
 import org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider;
-import org.apache.cxf.jaxrs.provider.JAXBElementProvider;
+import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 
 import java.io.IOException;
 
@@ -14,14 +14,14 @@ import java.io.IOException;
 public class RestStarter {
 
 
-    @SuppressWarnings("rawtypes")
     public void startRestService() {
         JAXRSServerFactoryBean factory = new JAXRSServerFactoryBean();
         factory.setAddress("http://localhost:8282/department");
         factory.setResourceClasses(DepartmentRestImpl.class);
         factory.setResourceProvider(new SingletonResourceProvider(new DepartmentRestImpl()));
-        factory.setProvider(new JAXBElementProvider());
-//        factory.setProvider(new org.apache.cxf.jaxrs.provider.json.JSONProvider());
+//        factory.setProvider(new JAXBElementProvider());
+        factory.setProvider(new JacksonJsonProvider());
+//        factory.setProvider(new JSONProvider());
         Server server = factory.create();
         server.start();
     }
