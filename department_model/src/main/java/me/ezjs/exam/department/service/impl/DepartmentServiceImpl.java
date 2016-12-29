@@ -14,7 +14,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.ezjs.exam.department;
+package me.ezjs.exam.department.service.impl;
+
+import me.ezjs.exam.department.service.DepartmentService;
 
 public class DepartmentServiceImpl implements DepartmentService {
     

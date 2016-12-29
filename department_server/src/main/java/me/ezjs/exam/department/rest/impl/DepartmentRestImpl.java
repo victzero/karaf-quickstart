@@ -1,6 +1,6 @@
 package me.ezjs.exam.department.rest.impl;
 
-import me.ezjs.exam.department.DepartmentService;
+import me.ezjs.exam.department.service.DepartmentService;
 import me.ezjs.exam.department.model.Department;
 import me.ezjs.exam.department.rest.DepartmentRest;
 

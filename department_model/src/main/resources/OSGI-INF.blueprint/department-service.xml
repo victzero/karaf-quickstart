@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.1.0"
@@ -16,34 +17,30 @@
   http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.1.0 http://aries.apache.org/schemas/blueprint-ext/blueprint-ext-1.1.xsd
   ">
 
+    <!-- Basic Bean Definitions-->
+    <!--
+        <bean id="foo" class="foo.bar.Baz">
+            <property name="simpleProperty" value="Hello World" />
+            <property
+        </bean>
+    -->
+    <bean id="departmentService" class="me.ezjs.exam.department.service.impl.DepartmentServiceImpl"/>
+    <service ref="departmentService" interface="me.ezjs.exam.department.service.DepartmentService"/>
 
-    <cxf:bus id="departmentRestBus">
-    </cxf:bus>
+    <!-- Osgi Service Related -->
+    <!--
+        Exposing Services :
+        ...
 
-    <!--<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">-->
-        <!--<property name="serializeAsArray" value="true"/>-->
-        <!--<property name="dropRootElement" value="true"/>-->
-        <!--<property name="supportUnwrapped" value="true" />-->
-    <!--</bean>-->
+        References to Services :
+        <reference id="referenceId" availability="optional" interface="foo.bar.IBaz"/>
+    -->
+    <!--<camelContext trace="false" xmlns="http://camel.apache.org/schema/blueprint">
+        <route>
+            <from uri="direct:route"/>
 
-    <jaxrs:server address="/department" id="departmentRest">
-        <jaxrs:serviceBeans>
-            <ref component-id="departmentRestImpl" />
-        </jaxrs:serviceBeans>
-        <jaxrs:features>
-            <cxf:logging />
-        </jaxrs:features>
-        <jaxrs:providers>
-            <!--<ref component-id="jsonProvider"/>-->
-            <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
-        </jaxrs:providers>
-    </jaxrs:server>
+            <log message="Hello World!"/>
+        </route>
+    </camelContext>-->
 
-
-    <bean id="departmentRestImpl" class="me.ezjs.exam.department.rest.impl.DepartmentRestImpl">
-        <property name="departmentService" ref="departmentService"></property>
-    </bean>
-
-    <reference id="departmentService" interface="me.ezjs.exam.department.service.DepartmentService" >
-    </reference>
 </blueprint>
