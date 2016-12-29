@@ -16,7 +16,7 @@
  */
 package me.ezjs.exam.department;
 
-public interface MyService {
+public interface DepartmentService {
     
     public String echo(String message);
     

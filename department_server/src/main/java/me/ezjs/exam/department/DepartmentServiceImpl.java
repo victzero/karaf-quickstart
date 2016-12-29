@@ -16,7 +16,7 @@
  */
 package me.ezjs.exam.department;
 
-public class MyServiceImpl implements MyService {
+public class DepartmentServiceImpl implements DepartmentService {
     
     public String echo(String message) {
         return "Echo processed: " + message;
