@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.ezjs.exam.department.service;
+package me.ezjs.exam.department;
 
 public interface DepartmentService {
     
