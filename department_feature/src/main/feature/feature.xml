@@ -25,8 +25,8 @@
         <!--<feature>this-project-dependants</feature>-->
 
         <!--<bundle start="true">mvn:org.slf4j/slf4j-api/1.6.1</bundle>-->
-        <bundle start="false">mvn:${project.groupId}/department-model/${project.version}</bundle>
-        <bundle start="false">mvn:${project.groupId}/department-server/${project.version}</bundle>
+        <bundle start="true">mvn:${project.groupId}/department-model/${project.version}</bundle>
+        <bundle start="true">mvn:${project.groupId}/department-server/${project.version}</bundle>
     </feature>
 
     <!--<feature name="this-project-dependants">-->
