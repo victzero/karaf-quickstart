@@ -15,7 +15,7 @@ public class DepartmentRestImpl implements DepartmentRest {
     DepDAO depDAO;
 
     public Department getAll() {
-        String name = departmentService.echo("haha") + depDAO.hello("ha");
+        String name = departmentService.echo("haha...") + depDAO.hello("ha");
         Department department = new Department();
         department.setName(name);
         department.setId("1");

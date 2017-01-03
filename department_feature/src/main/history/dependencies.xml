@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.3.0" name="department-feature-1.0-SNAPSHOT">
+    <feature version="0.0.0">
+        <bundle>mvn:me.ezjs.quickstart.karaf/department-model/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:me.ezjs.quickstart.karaf/department-server/1.0-SNAPSHOT</bundle>
+    </feature>
+</features>

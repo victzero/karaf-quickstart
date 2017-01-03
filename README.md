@@ -21,3 +21,5 @@ install mvn:me.ezjs.quickstart.karaf/department-server/1.0-SNAPSHOT
 
 
 bundle:watch *
+
+feature:repo-add mvn:me.ezjs.quickstart.karaf/department-feature/1.0-SNAPSHOT/xml/features

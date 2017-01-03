@@ -21,6 +21,7 @@
         <module>department_model</module>
         <module>department_server</module>
         <module>staff_server</module>
+        <module>department_feature</module>
     </modules>
 
     <dependencies>

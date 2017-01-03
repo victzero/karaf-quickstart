@@ -6,6 +6,6 @@ package me.ezjs.exam.department;
 public class DepDAOImpl implements DepDAO {
     
     public String hello(String msg) {
-        return "hello: " + msg;
+        return "hello in DAO: " + msg;
     }
 }
