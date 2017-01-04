@@ -75,6 +75,7 @@ public class DatabaseBean implements CamelContextAware {
     private void execute(String sql) throws SQLException {
         MyBatisComponent component = camelContext.getComponent("mybatis", MyBatisComponent.class);
         Connection con = component.getSqlSessionFactory().getConfiguration().getEnvironment().getDataSource().getConnection();
+        con.setAutoCommit(false);
         Statement stm = con.createStatement();
         stm.execute(sql);
         // must commit connection

@@ -82,3 +82,12 @@ install mvn:me.ezjs.quickstart.karaf/department-server/1.0-SNAPSHOT
 
 log:tail
 
+修改配置后可直接连接mysql,并操作数据库
+见department_model/src/main/resources/SqlMapConfig.xml
+ +         <!--<property name="driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>-->
+ +         <!--<property name="url" value="jdbc:derby:memory:mybatis;create=true"/>-->
+ +         <property name="driver" value="com.mysql.jdbc.Driver"/>
+ +         <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
+ +         <property name="username" value="root"/>
+ +         <property name="password" value="root"/>
+
