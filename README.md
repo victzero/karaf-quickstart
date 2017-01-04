@@ -26,7 +26,7 @@ feature:repo-add mvn:me.ezjs.quickstart.karaf/department-feature/1.0-SNAPSHOT/xm
 
 
 连接数据库方案１：
-使用pax-jdbc链接数据库,将其以OSGI服务的形式提供
+第一步:使用pax-jdbc链接数据库,将其以OSGI服务的形式提供
 Database drivers in OSGi are always a bit difficult as the most common approach outside OSGi using DriverManager is not really suitable for OSGi.
 
 The best approach in OSGi is to use a DataSourceFactory which is standardized by the OSGi alliance. Some database drivers already offer this. For others pax-jdbc provides an adapter. For mysql the second case applies.
@@ -61,7 +61,24 @@ jdbc:execute test-mysql create table person (name varchar(100), twittername varc
 jdbc:execute test-mysql insert into person (name, twittername) values ('Christian Schneider', '@schneider_chris')
 jdbc:query test-mysql select * from person
 
+第二步:使用mybatis连接 or 不适用mybatis
+
+
 连接数据库方案２：
 使用camel-mybatis
 feature:repo-add pax-jdbc 0.8.0
 feature:install pax-jdbc-mysql
+
+
+
+#camel-mybatis
+使用camel-mybatis连接Derby数据库
+feature:repo-add camel 2.18.1
+feature:install camel camel-mybatis
+bundle:install mvn:org.apache.derby/derby/10.11.1.1
+
+install mvn:me.ezjs.quickstart.karaf/department-model/1.0-SNAPSHOT
+install mvn:me.ezjs.quickstart.karaf/department-server/1.0-SNAPSHOT
+
+log:tail
+
