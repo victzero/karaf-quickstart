@@ -23,7 +23,13 @@ import java.util.Random;
 public class DepartmentServiceImpl implements DepartmentService {
 
     public String echo(String message) {
+        System.out.println(">>> in method DepartmentServiceImpl.echo: " + message);
         return "Echo processed: " + message;
+    }
+
+    public String getCompany(String id) {
+        System.out.println("<< in method DepartmentServiceImpl.getCompany: " + id);
+        return "Echo processed: " + id;
     }
 
     public String toEndpoint(String in) {

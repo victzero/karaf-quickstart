@@ -138,5 +138,9 @@
 ## 3. 使用camel
 **[URIs](http://camel.apache.org/uris.html)**
 
+	feature:install camel-cxf
 
+**Difference between using camel cxfrs and jaxrs server**
+>First, these two are used to configure the server.
+>But cxfrs:server is used to configure the server which is used by the camel-cxfrs to route the REST request to camel route, it doesn't invoke the resources classes instance method; jaxrs:server is used to expose the REST service which can accept the REST request and send response by invoke the resources classes instance that you configured.
 

@@ -22,6 +22,8 @@ public interface DepartmentService {
 
     public String echo(String message);
 
+    String getCompany(String id);
+
     String toEndpoint(String in);
 
     Order generateOrder();
