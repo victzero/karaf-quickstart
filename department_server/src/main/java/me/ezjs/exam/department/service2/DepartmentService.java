@@ -16,10 +16,15 @@
  */
 package me.ezjs.exam.department.service2;
 
+import me.ezjs.exam.department.model.Order;
+
 public interface DepartmentService {
 
     public String echo(String message);
 
     String toEndpoint(String in);
 
+    Order generateOrder();
+
+    String processOrder(Order order);
 }

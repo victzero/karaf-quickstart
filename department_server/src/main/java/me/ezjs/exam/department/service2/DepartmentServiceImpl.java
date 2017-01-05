@@ -16,6 +16,10 @@
  */
 package me.ezjs.exam.department.service2;
 
+import me.ezjs.exam.department.model.Order;
+
+import java.util.Random;
+
 public class DepartmentServiceImpl implements DepartmentService {
 
     public String echo(String message) {
@@ -27,4 +31,23 @@ public class DepartmentServiceImpl implements DepartmentService {
         return "to endpoint: " + in;
     }
 
+    private int counter = 100;
+    private Random ran = new Random();
+
+    /**
+     * Generates a new order
+     */
+    public Order generateOrder() {
+        System.out.println("...generating order: " + counter);
+        Order order = new Order();
+        order.setId(counter++);
+        order.setItem(counter + " " + ran.nextInt(100));
+        order.setAmount(ran.nextInt(100) + 1);
+        order.setDescription(counter % 2 == 0 ? "...Camel in Action" : "...ActiveMQ in Action");
+        return order;
+    }
+
+    public String processOrder(Order order) {
+        return ">>>>>< order id " + order.getId() + " item " + order.getItem() + " of " + order.getAmount() + " copies of " + order.getDescription();
+    }
 }
