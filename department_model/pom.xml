@@ -22,11 +22,6 @@
         <!-- Camel -->
         <dependency>
             <groupId>org.apache.camel</groupId>
-            <artifactId>camel-context</artifactId>
-            <version>2.18.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
             <artifactId>camel-blueprint</artifactId>
             <version>2.18.1</version>
         </dependency>

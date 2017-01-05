@@ -16,7 +16,7 @@
 
 ## karaf常用命令
 * `bundle:watch *`开发时监听SNAPSHOT版本的bundle,并及时自动更新
-
+* 连接已经启动karaf
 
 ## 1. 初识karaf,需手动安装依赖包
 目标:
@@ -135,7 +135,8 @@
 	log:tail
 
 
-
+## 3. 使用camel
+**[URIs](http://camel.apache.org/uris.html)**
 
 
 

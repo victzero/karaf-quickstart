@@ -14,6 +14,7 @@
         <log4j-version>1.2.16</log4j-version>
         <slf4j-version>1.6.1</slf4j-version>
         <osgi.version>6.0.0</osgi.version>
+        <camel-version>2.18.1</camel-version>
     </properties>
 
     <modules>
@@ -34,6 +35,12 @@
             <groupId>org.apache.aries.blueprint</groupId>
             <artifactId>org.apache.aries.blueprint.annotation.api</artifactId>
             <version>0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-context</artifactId>
+            <version>2.18.1</version>
         </dependency>
 
         <dependency>

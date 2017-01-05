@@ -17,9 +17,14 @@
 package me.ezjs.exam.department.service2;
 
 public class DepartmentServiceImpl implements DepartmentService {
-    
+
     public String echo(String message) {
         return "Echo processed: " + message;
     }
-    
+
+    public String toEndpoint(String in) {
+        System.out.println(">>> in method DepartmentServiceImpl.toEndpoint: " + in);
+        return "to endpoint: " + in;
+    }
+
 }

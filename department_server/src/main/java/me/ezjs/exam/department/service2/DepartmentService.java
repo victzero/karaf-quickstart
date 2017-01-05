@@ -17,7 +17,9 @@
 package me.ezjs.exam.department.service2;
 
 public interface DepartmentService {
-    
+
     public String echo(String message);
-    
+
+    String toEndpoint(String in);
+
 }
