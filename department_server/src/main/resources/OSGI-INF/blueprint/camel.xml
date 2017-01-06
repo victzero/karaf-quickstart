@@ -5,11 +5,12 @@
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
 
 
-<bean id="helloBean" class="me.ezjs.exam.department.rest.HelloWorldResource"/>
+    <bean id="helloBean" class="me.ezjs.exam.department.rest.HelloWorldResource"/>
 
-    <cxf:rsServer id="helloServer" address="/helloapp" serviceClass="me.ezjs.exam.department.rest.HelloWorldResource" loggingFeatureEnabled="true">
+    <cxf:rsServer id="helloServer" address="/helloapp" serviceClass="me.ezjs.exam.department.rest.HelloWorldResource"
+                  loggingFeatureEnabled="true">
         <!--<cxf:serviceBeans>-->
-            <!--<ref bean="helloBean"/>-->
+        <!--<ref bean="helloBean"/>-->
         <!--</cxf:serviceBeans>-->
         <cxf:providers>
             <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
@@ -44,35 +45,32 @@
         </route>
     </camelContext>
 
-    <!--<bean id="companyRouteBuilder" class="me.ezjs.exam.department.rest.CxfrsRouteBuilder"/>-->
-
-    <!--<camel:camelContext xmlns="http://camel.apache.org/schema/spring">-->
-    <!--<camel:routeBuilder ref="companyRouteBuilder"/>-->
-    <!--</camel:camelContext>-->
-
     <!-- here is Camel configured with a number of routes -->
-    <!--<camelContext id="myBatisAndCamel2" xmlns="http://camel.apache.org/schema/blueprint">-->
+    <camelContext id="myBatisAndCamel2" xmlns="http://camel.apache.org/schema/blueprint">
 
-    <!--&lt;!&ndash; route that generate new orders and insert them in the database &ndash;&gt;-->
-    <!--<route id="generateOrder-route2">-->
-    <!--&lt;!&ndash;<from uri="timer:foo2?period=2s"/>&ndash;&gt;-->
-    <!--<from uri="cxfrs://http://localhost:8181/rest?resourceClasses=me.ezjs.exam.department.rest.CompanyService"/>-->
-    <!--<log message="Inserted new order ${header.operationName}"/>-->
-    <!--<choice>-->
-    <!--<when>-->
-    <!--<simple>${header.operationName} == 'getCompany'</simple>-->
-    <!--<to uri="direct:invokeSayHello" />-->
-    <!--</when>-->
-    <!--</choice>-->
-    <!--<log message="Inserted new order ${header.operationName}"/>-->
-    <!--</route>-->
+        <!--&lt;!&ndash; route that generate new orders and insert them in the database &ndash;&gt;-->
+        <route id="generateOrder-route2">
+            <!--<from uri="timer:foo2?period=2s"/>-->
+            <from uri="cxfrs:/rest?resourceClasses=me.ezjs.exam.department.rest.CompanyService"/>
+            <log message="Processing CXF route....http method ${header.CamelHttpMethod}"/>
+            <log message="Processing CXF route....path is ${header.CamelHttpPath}"/>
+            <log message="Processing CXF route....body is ${body}"/>
+            <log message="Inserted new order ${header.operationName}"/>
+            <choice>
+                <when>
+                    <simple>${header.operationName} == 'company'</simple>
+                    <to uri="direct:invokeSayHello2"/>
+                </when>
+            </choice>
+            <log message="Inserted new order ${header.operationName}"/>
+        </route>
 
-    <!--<route id="invokeSayHello">-->
-    <!--<from uri="direct:invokeSayHello" />-->
-    <!--<bean ref="departmentService" method="getCompany" />-->
-    <!--</route>-->
+        <route id="invokeSayHello2">
+            <from uri="direct:invokeSayHello2"/>
+            <bean ref="departmentService" method="getCompany"/>
+        </route>
 
-    <!--</camelContext>-->
+    </camelContext>
     <!-- END SNIPPET: e2 -->
 
 </blueprint>

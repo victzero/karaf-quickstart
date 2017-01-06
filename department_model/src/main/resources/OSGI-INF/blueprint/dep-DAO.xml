@@ -15,7 +15,12 @@
   http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.1.0.xsd
   http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.1.0 http://aries.apache.org/schemas/blueprint-ext/blueprint-ext-1.1.xsd
   ">
-    <bean id="depDAO" class="me.ezjs.exam.department.DepDAOImpl"/>
+    <bean id="depDAO" class="me.ezjs.exam.department.DepDAOImpl">
+           <property name="camelContext" ref="myBatisAndCamel2"/>
+    </bean>
     <service ref="depDAO" interface="me.ezjs.exam.department.DepDAO"/>
 
+    <camelContext id="myBatisAndCamel2" xmlns="http://camel.apache.org/schema/blueprint">
+
+    </camelContext>
 </blueprint>

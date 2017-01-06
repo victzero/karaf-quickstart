@@ -144,3 +144,9 @@
 >First, these two are used to configure the server.
 >But cxfrs:server is used to configure the server which is used by the camel-cxfrs to route the REST request to camel route, it doesn't invoke the resources classes instance method; jaxrs:server is used to expose the REST service which can accept the REST request and send response by invoke the resources classes instance that you configured.
 
+
+
+
+
+install mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_7
+install mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_4

@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by Zjs-yd on 2016/12/28.
  */
+@Path("/")
 @Produces({MediaType.APPLICATION_JSON})
 public interface DepartmentRest {
 

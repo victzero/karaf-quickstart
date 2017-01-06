@@ -24,6 +24,8 @@
         <!--<feature version="${cxf.version}">cxf</feature>-->
         <!--<feature>this-project-dependants</feature>-->
 
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_7</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_4</bundle>
         <!--<bundle start="true">mvn:org.slf4j/slf4j-api/1.6.1</bundle>-->
         <bundle start="true">mvn:${project.groupId}/department-model/${project.version}</bundle>
         <bundle start="true">mvn:${project.groupId}/department-server/${project.version}</bundle>

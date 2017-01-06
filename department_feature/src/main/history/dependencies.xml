@@ -3,5 +3,7 @@
     <feature version="0.0.0">
         <bundle>mvn:me.ezjs.quickstart.karaf/department-model/1.0-SNAPSHOT</bundle>
         <bundle>mvn:me.ezjs.quickstart.karaf/department-server/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_4</bundle>
+        <bundle>mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_7</bundle>
     </feature>
 </features>
